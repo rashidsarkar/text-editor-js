@@ -9,11 +9,15 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style></style>
+    <style>
+      .give_pointer > * {
+        cursor: pointer;
+      }
+    </style>
   </head>
 
   <body>
-    <main class="h-[800px] w-4/5 bg-sky-200 p-8 mx-auto rounded-md">
+    <main class="h-[800px] w-4/5 bg-[#94C4FE] p-8 mx-auto rounded-md">
       <section>
         <h1 class="text-5xl font-bold text-center text-green-600">
           My Text Editor
@@ -23,24 +27,33 @@
         >
           <div>
             <div
-              class="flex items-center justify-between h-20 p-3 bg-green-500 text-style"
+              class="flex items-center justify-between h-20 p-3 bg-[#BED9FD] text-style"
             >
-              <div class="flex h-8 gap-2">
+              <div class="flex h-8 gap-2 give_pointer">
                 <img class="h-full" src="icons/bold.png" alt="" />
                 <img class="h-full" src="icons/italic.png" alt="" />
                 <img class="h-full" src="icons/underline.png" alt="" />
               </div>
-              <div class="flex h-8 gap-2">
+              <div class="flex h-8 gap-2 give_pointer">
                 <img class="h-full" src="icons/align-left.png" alt="" />
                 <img class="h-full" src="icons/aling-center.png" alt="" />
                 <img class="h-full" src="icons/align-right.png" alt="" />
                 <img class="h-full" src="icons/justify.png" alt="" />
               </div>
-              <div class="flex h-8 gap-2">
-                <img class="h-full" src="icons/bold.png" alt="" />
-                <img class="h-full" src="icons/italic.png" alt="" />
-                <img class="h-full" src="icons/underline.png" alt="" />
+              <div class="flex h-8 gap-2 give_pointer">
+                <input class="w-16 text-2xl font-bold" type="number" />
+                <img class="h-full" src="icons/font-adjustment.png" alt="" />
+                <input class="w-16 h-8 text-2xl" type="color" />
               </div>
+            </div>
+            <hr class="w-11/12 h-1 mx-auto my-1 bg-gray-600" />
+            <div>
+              <textarea
+                placeholder="Start Typing..."
+                class="w-full mx-auto text-2xl h-4/5 textarea textarea-bordered textarea-lg"
+                rows="12"
+                cols="40"
+              ></textarea>
             </div>
           </div>
         </div>
