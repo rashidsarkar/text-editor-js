@@ -30,25 +30,71 @@
               class="flex items-center justify-between h-20 p-3 bg-[#BED9FD] text-style"
             >
               <div class="flex h-8 gap-2 give_pointer">
-                <img class="h-full" src="icons/bold.png" alt="" />
-                <img class="h-full" src="icons/italic.png" alt="" />
-                <img class="h-full" src="icons/underline.png" alt="" />
+                <img
+                  class="h-full"
+                  src="icons/bold.png"
+                  alt=""
+                  id="bold"
+                  onclick="myWorkOnTextArea('font-bold')"
+                />
+                <img
+                  class="h-full"
+                  src="icons/italic.png"
+                  alt=""
+                  id="italy"
+                  onclick="myWorkOnTextArea('italic')"
+                />
+                <img
+                  class="h-full"
+                  src="icons/underline.png"
+                  alt=""
+                  onclick="myWorkOnTextArea('underline')"
+                />
               </div>
               <div class="flex h-8 gap-2 give_pointer">
-                <img class="h-full" src="icons/align-left.png" alt="" />
-                <img class="h-full" src="icons/aling-center.png" alt="" />
-                <img class="h-full" src="icons/align-right.png" alt="" />
-                <img class="h-full" src="icons/justify.png" alt="" />
+                <img
+                  class="h-full"
+                  src="icons/align-left.png"
+                  alt=""
+                  onclick="myWorkOnTextArea('text-left')"
+                />
+                <img
+                  class="h-full"
+                  src="icons/aling-center.png"
+                  alt=""
+                  onclick="myWorkOnTextArea('text-center')"
+                />
+                <img
+                  class="h-full"
+                  src="icons/align-right.png"
+                  alt=""
+                  onclick="myWorkOnTextArea('text-right')"
+                />
+                <img
+                  class="h-full"
+                  src="icons/justify.png"
+                  alt=""
+                  onclick="myWorkOnTextArea('text-justify')"
+                />
               </div>
               <div class="flex h-8 gap-2 give_pointer">
-                <input class="w-16 text-2xl font-bold" type="number" />
+                <input
+                  class="w-16 text-2xl font-bold"
+                  type="number"
+                  id="fontSize"
+                />
                 <img class="h-full" src="icons/font-adjustment.png" alt="" />
-                <input class="w-16 h-8 text-2xl" type="color" />
+                <input
+                  class="w-16 h-8 text-2xl"
+                  type="color"
+                  id="colorPicker"
+                />
               </div>
             </div>
             <hr class="w-11/12 h-1 mx-auto my-1 bg-gray-600" />
             <div>
               <textarea
+                id="textArea"
                 placeholder="Start Typing..."
                 class="w-full mx-auto text-2xl h-4/5 textarea textarea-bordered textarea-lg"
                 rows="12"
@@ -59,5 +105,28 @@
         </div>
       </section>
     </main>
+    <!-- <script src="js/app.js"></script> -->
+    <script>
+      const textArea = document.getElementById("textArea");
+
+      function myWorkOnTextArea(className) {
+        textArea.classList.toggle(className);
+      }
+
+      const fontSize = document.getElementById("fontSize");
+      fontSize.value = 24;
+      fontSize.addEventListener("click", function () {
+        let mySizeFromUser = fontSize.value;
+        let mySizeFromNum = parseInt(mySizeFromUser);
+
+        textArea.classList.toggle(`text-[${mySizeFromNum}px]`);
+      });
+      const colorPicker = document.getElementById("colorPicker");
+      colorPicker.addEventListener("input", function () {
+        let myColorString = colorPicker.value;
+
+        textArea.classList.toggle(`text-[${myColorString}]`);
+      });
+    </script>
   </body>
 </html>
