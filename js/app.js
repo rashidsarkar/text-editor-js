@@ -3,7 +3,20 @@ const textArea = document.getElementById("textArea");
 function myWorkOnTextArea(className) {
   textArea.classList.toggle(className);
 }
-
+/*
+const bold = document.getElementById("bold");
+const italy = document.getElementById("italy");
+const underline = document.getElementById("underline");
+bold.addEventListener("click", function () {
+  textArea.style.fontWeight = "bold";
+});
+italy.addEventListener("click", function () {
+  textArea.style.fontStyle = "italic";
+});
+underline.addEventListener("click", function () {
+  textArea.style.textDecoration = "underline";
+});
+*/
 const fontSize = document.getElementById("fontSize");
 fontSize.value = 24;
 fontSize.addEventListener("click", function (e) {
